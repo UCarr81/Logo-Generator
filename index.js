@@ -1,7 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const {Circle, Triangle, Sqaure } = require('./lib/shapes');
-
+const { Circle, Triangle, Square } = require('./lib/shapes');
 
 const questions = [
     {
@@ -37,5 +36,25 @@ const questions = [
         name: 'defaultShapeColor',
         choices: ['Red', 'Blue', 'Yellow', 'Green'],
         when: (answers) => !answers.includeColor,
-      }
+      },
+      {
+        type: 'confirm',
+        message: 'Do you have a text color code ready? (YES/NO)',
+        name: 'includeTextColor',
+        default: true,
+      },
+      {
+        type: 'input',
+        message: 'Enter the text color (keyword or hexadecimal):',
+        name: 'textColor',
+        when: (answers) => answers.includeTextColor,
+      },
+      {
+        type: 'list',
+        message: 'Select the text color',
+        name: 'defaulttextColor',
+        choices: ['Red', 'Blue', 'Yellow', 'Green'],
+        when: (answers) => !answers.includeTextColor,
+      },
 ]
+

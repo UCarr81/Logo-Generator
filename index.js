@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Circle } = require('./lib/shapes');
+const { Circle, Square } = require('./lib/shapes');
 
 
 const questions = [
@@ -64,9 +64,12 @@ function generateLogo(answers) {
 
   switch (answers.shapes) {
     case 'circle':
-      shape = new Circle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor); // Fix the typo here
+      shape = new Circle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor);
       break;
-    default:
+    case 'square':
+      shape = new Square(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor); 
+      break;
+      default:
       console.error('Invalid shape selection');
       return;
   }

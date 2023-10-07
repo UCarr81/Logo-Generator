@@ -1,7 +1,5 @@
 
-        <svg version="1.1"
-            width="300" height="200"
-            xmlns="http://www.w3.org/2000/svg">
-            <circle cx="150" cy="100" r="100" fill="Blue" />
-            <text x="150" y="125" font-size="70" text-anchor="middle" fill="Red">Uri</text>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="250">
+            <rect x="50" y="50" width="200" height="150" stroke="black" fill="Red" stroke-width="5"/>
+            <text x="150" y="150" font-size="70" text-anchor="middle" fill="Blue">dda</text>
         </svg>

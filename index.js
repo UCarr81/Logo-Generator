@@ -1,11 +1,12 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Circle, Triangle, Square } = require('./lib/shapes');
+const { Circle } = require('./lib/shapes');
+
 
 const questions = [
     {
         type: 'input',
-        message: 'Please Input 1-3 Letters',
+        message: 'Please Input 1-3 Characters',
         name: 'letters'
     },
     {
@@ -58,3 +59,24 @@ const questions = [
       },
 ]
 
+function generateLogo(answers) {
+  let shape;
+
+  switch (answers.shapes) {
+    case 'circle':
+      shape = new Circle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor); // Fix the typo here
+      break;
+    default:
+      console.error('Invalid shape selection');
+      return;
+  }
+
+  const svgString = shape.render();
+
+  fs.writeFileSync('logo.svg', svgString);
+  console.log('Generated logo.svg');
+}
+
+inquirer.prompt(questions).then((answers) => {
+  generateLogo(answers);
+});

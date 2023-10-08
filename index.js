@@ -38,8 +38,27 @@ const questions = [
         type: 'list',
         message: 'Select the shape color',
         name: 'defaultShapeColor',
-        choices: ['Red', 'Blue', 'Yellow', 'Green'],
+        choices: ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'White'],
         when: (answers) => !answers.includeColor,
+      },
+      {
+        type: 'confirm', 
+        message: 'Do you have a shape outline color code ready? (YES/NO)',
+        name: 'includeOutlineShapeColor',
+        default: true,
+      },
+      {
+        type: 'input',
+        message: 'Enter the shape outline color (keyword or hexadecimal):',
+        name: 'outlineShapeColor',
+        when: (answers) => answers.includeOutlineShapeColor,
+      },
+      {
+        type: 'list',
+        message: 'Select the outline shape color',
+        name: 'outlineShapeColor',
+        choices: ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'White'],
+        when: (answers) => !answers.includeOutlineShapeColor,
       },
       {
         type: 'confirm',
@@ -57,7 +76,7 @@ const questions = [
         type: 'list',
         message: 'Select the text color',
         name: 'defaulttextColor',
-        choices: ['Red', 'Blue', 'Yellow', 'Green'],
+        choices: ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'White'],
         when: (answers) => !answers.includeTextColor,
       },
 ]

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Circle, Square } = require('./lib/shapes');
+const { Circle, Square, Triangle } = require('./lib/shapes');
 
 
 const questions = [
@@ -69,6 +69,11 @@ function generateLogo(answers) {
     case 'square':
       shape = new Square(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor); 
       break;
+    case 'triangle':
+      shape = new Triangle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor); 
+      break;
+      
+      
       default:
       console.error('Invalid shape selection');
       return;

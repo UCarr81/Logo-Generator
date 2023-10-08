@@ -56,7 +56,7 @@ const questions = [
       {
         type: 'list',
         message: 'Select the outline shape color',
-        name: 'outlineShapeColor',
+        name: 'outlineShapeColorList',
         choices: ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'White'],
         when: (answers) => !answers.includeOutlineShapeColor,
       },
@@ -86,22 +86,22 @@ function generateLogo(answers) {
 
   switch (answers.shapes) {
     case 'circle':
-      shape = new Circle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor);
+      shape = new Circle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor, answers.outlineShapeColor || answers.outlineShapeColorList);
       break;
     case 'square':
-      shape = new Square(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor); 
+      shape = new Square(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor, answers.outlineShapeColor || answers.outlineShapeColorList); 
       break;
     case 'triangle':
-      shape = new Triangle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor); 
+      shape = new Triangle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor, answers.outlineShapeColor || answers.outlineShapeColorList); 
       break;
     case 'rectangle':
-      shape = new Rectangle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor);
+      shape = new Rectangle(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor, answers.outlineShapeColor || answers.outlineShapeColorList);
       break;
     case 'shield':
-      shape = new Shield(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor);
+      shape = new Shield(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor, answers.outlineShapeColor || answers.outlineShapeColorList);
       break;
     case 'star':
-      shape = new Star(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor);
+      shape = new Star(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor, answers.outlineShapeColor || answers.outlineShapeColorList);
       break;
       
       

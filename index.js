@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Circle, Square, Triangle, Rectangle, Shield} = require('./lib/shapes');
+const { Circle, Square, Triangle, Rectangle, Star, Shield} = require('./lib/shapes');
 
 
 const questions = [
@@ -18,7 +18,8 @@ const questions = [
             { name: 'Triangle', value: 'triangle'},
             { name: 'Square', value: 'square'},
             { name: 'Rectangle', value: 'rectangle'},
-            { name: 'Shield', value: 'shield'}
+            { name: 'Shield', value: 'shield'},
+            { name: 'Star', value: 'star'}
         ],
     },
     {
@@ -79,6 +80,9 @@ function generateLogo(answers) {
       break;
     case 'shield':
       shape = new Shield(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor);
+      break;
+    case 'star':
+      shape = new Star(answers.shapeColor || answers.defaultShapeColor, answers.letters, answers.textColor || answers.defaulttextColor);
       break;
       
       

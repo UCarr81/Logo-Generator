@@ -1,6 +1,6 @@
 
-        <svg version="1.1"
+        <svg version="1.1" 
 width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50,10 Q50,40 150,10 Q250,40 250,10 L250,150 Q250,190 150,200 Q50,190 50,150 Z" fill="Yellow" stroke="black" stroke-width="5" />
-    <text x="150" y="100" font-size="100" text-anchor="middle" alignment-baseline="middle" fill="Green">gsa</text>
+    <polygon points="150,10 175,90 255,90 190,140 215,220 150,170 85,220 110,140 45,90 125,90" fill="blue" stroke-width="5" stroke="black"/>
+    <text x="150" y="150" font-size="70" text-anchor="middle" fill="red">Uri</text>
   </svg>
